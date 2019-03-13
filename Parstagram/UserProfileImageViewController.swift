@@ -1,37 +1,44 @@
 //
-//  CameraViewController.swift
+//  UserProfileImageViewController.swift
 //  Parstagram
 //
-//  Created by Komlan Attiogbe on 3/5/19.
+//  Created by Komlan Attiogbe on 3/12/19.
 //  Copyright © 2019 Komlan Attiogbe. All rights reserved.
 //
 
 import UIKit
-import AlamofireImage
 import Parse
+import AlamofireImage
 
-class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class UserProfileImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
-    @IBOutlet weak var commentField: UITextField!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let user = PFUser.current()!
+        if (user["profile_image"] != nil) {
+        let imageFile = user["profile_image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+            
+        profileImageView.af_setImage(withURL: url)
+        profileImageView.layer.borderWidth = 0
+        profileImageView.layer.masksToBounds = false
+        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+        profileImageView.clipsToBounds = true
+        }
+        
     }
     
-    @IBAction func onSubmitButton(_ sender: Any) {
-        let post = PFObject(className: "Posts")
-        
-        post["caption"] = commentField.text!
-        post["author"] = PFUser.current()!
-        
-        let imageData = imageView.image!.pngData()
+    @IBAction func onChangeProfileButton(_ sender: Any) {
+        let user = PFUser.current()!
+        let imageData = profileImageView.image!.pngData()
         let file = PFFileObject(data: imageData!)
         
-        post["image"] = file
-        
-        post.saveInBackground { (success, error) in
+        user["profile_image"] = file
+        user.saveInBackground { (success, error) in
             if success {
                 self.dismiss(animated: true, completion: nil)
                 print("Saved!")
@@ -39,6 +46,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print("Error!")
             }
         }
+        
+        
+        
     }
     
     @IBAction func onCameraButton(_ sender: Any) {
@@ -61,7 +71,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let size = CGSize(width: 300, height: 300)
         let scaledImage = image.af_imageAspectScaled(toFill: size)
         
-        imageView.image = scaledImage
+        profileImageView.image = scaledImage
         dismiss(animated: true, completion: nil)
     }
     /*

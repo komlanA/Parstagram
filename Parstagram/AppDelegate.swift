@@ -24,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://stark-mesa-98906.herokuapp.com/parse"
             })
         )
+        if PFUser.current() != nil {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let feedTabBarController = main.instantiateViewController(withIdentifier: "FeedTabBarController")
+            
+            window?.rootViewController = feedTabBarController
+        }
         return true
     }
 

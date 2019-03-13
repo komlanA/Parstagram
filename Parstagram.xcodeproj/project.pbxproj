@@ -14,6 +14,8 @@
 		B16DFEC9222F71E500302125 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16DFEC8222F71E500302125 /* FeedViewController.swift */; };
 		B16DFECB222F7E6A00302125 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16DFECA222F7E6A00302125 /* CameraViewController.swift */; };
 		B16DFECD222F870A00302125 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16DFECC222F870A00302125 /* PostCell.swift */; };
+		B1B1B2A822371BF200D781DE /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B1B2A722371BF200D781DE /* CommentCell.swift */; };
+		B1B1B2AA2238982A00D781DE /* UserProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B1B2A92238982A00D781DE /* UserProfileImageViewController.swift */; };
 		B1C150BB222F34B700F9054D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C150BA222F34B700F9054D /* AppDelegate.swift */; };
 		B1C150C0222F34B700F9054D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C150BE222F34B700F9054D /* Main.storyboard */; };
 		B1C150C2222F34BA00F9054D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C150C1222F34BA00F9054D /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		B16DFEC8222F71E500302125 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		B16DFECA222F7E6A00302125 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B16DFECC222F870A00302125 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		B1B1B2A722371BF200D781DE /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		B1B1B2A92238982A00D781DE /* UserProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImageViewController.swift; sourceTree = "<group>"; };
 		B1C150B7222F34B700F9054D /* Parstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C150BA222F34B700F9054D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1C150BF222F34B700F9054D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				B16DFEC8222F71E500302125 /* FeedViewController.swift */,
 				B16DFECA222F7E6A00302125 /* CameraViewController.swift */,
 				B16DFECC222F870A00302125 /* PostCell.swift */,
+				B1B1B2A722371BF200D781DE /* CommentCell.swift */,
+				B1B1B2A92238982A00D781DE /* UserProfileImageViewController.swift */,
 			);
 			path = Parstagram;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -348,6 +355,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +419,8 @@
 				B16DFEC9222F71E500302125 /* FeedViewController.swift in Sources */,
 				B1C150BB222F34B700F9054D /* AppDelegate.swift in Sources */,
 				B16DFECD222F870A00302125 /* PostCell.swift in Sources */,
+				B1B1B2AA2238982A00D781DE /* UserProfileImageViewController.swift in Sources */,
+				B1B1B2A822371BF200D781DE /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
